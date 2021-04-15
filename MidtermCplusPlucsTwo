@@ -1,0 +1,127 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <list>
+#include <vector>
+
+
+
+
+
+class GetList
+{
+private:
+    std::vector<std::string> studentnumber;
+    std::vector<std::string> studnetname;
+    std::vector<std::string> studnetface;
+    std::vector<std::string> studnetemail;
+public:
+
+    void Getlisty()
+    {
+
+        //SaveStudnetNumber Nums;
+        //SaveStudnetName Name;
+        //SaveStudnetFace Face;
+        //SaveStudnetEmail Email;
+
+        studentnumber.resize(500);
+        studnetname.resize(500);
+        studnetemail.resize(500);
+        studnetface.resize(500);
+
+
+
+        int track = 0;
+        //std::string filename = "sample.csv";
+        std::ifstream doc;
+
+        doc.open("sample.csv.csv");
+
+        int count = 0;
+
+        while (doc.good() || track > 500)
+        {
+
+            std::string next = "";
+            getline(doc, next, ',');
+            //std::cout << count;
+            //std::cout << ":";
+            std::cout << next + " ";
+
+
+            std::string crap = "";
+
+            crap = next;
+
+            if (count == 0)
+            {
+                //Nums.number(next, track);
+                //studentnumber[track] = next;
+                count = count + 1;
+            }
+            else if (count == 1)
+            {
+                //Name.number(next);
+
+                //studnetname[track] = next;
+                count = count + 1;
+            }
+            else if (count == 2)
+            {
+                //Face.number(next);
+                //studnetface[track] = next;
+                count = count + 1;
+            }
+            else if (count >= 3)
+            {
+                //Email.number(next);
+                //studnetemail[track] = next;
+                count = 0;
+                //std::cout << " " << std::endl;
+                track = track + 1;
+            }
+
+
+            //std::cout << "" << std::endl;
+        }
+
+        //std::cout << "theend" << std::endl;
+
+    }
+
+
+
+};
+
+int main()
+{
+    
+
+    GetList stuff;
+    stuff.Getlisty();
+
+    /*
+    SaveStudnetNumber Nums;
+    SaveStudnetName Name;
+    SaveStudnetFace Face;
+    SaveStudnetEmail Email;
+
+    int howlong = 0;
+    //howlong = Nums.lengthy();
+
+    howlong = 500;
+    std::cout << howlong;
+
+    Nums.resize(howlong);
+
+    for (int i = 0; i < 499; i++)
+    {
+        //std::cout << Nums.print(i) + ", ";
+        //std::cout << Name.print(i) + ", ";
+        //std::cout << Face.print(i) + ", ";
+        //std::cout << Email.print(i) + ", " << std::endl;
+    }
+    */
+
+}
